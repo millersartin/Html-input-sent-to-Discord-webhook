@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+Html input sent to Discord webhook
+  </title>
+</head>
+
+<style>
+body {
+  font-family: Arial;
+  font-size: 20px;
+}
+</style>
+
+<body style="text-align:center;" face="Arial" id="body">
+  <h1 style="color:black;">
+      HTML input to discord webhook message
+    </h1>
+<h1 style="text-align:center; font-size: 20px;" face="Arial" >https://github.com/7wuza</h1>
+<p>Text entered here will be sent to specfied webhook and sent to a text channel <p>
+  <input type='text' id='id1' />
+  <br>
+  <br>
+  <button onclick="gfg_Run()">
+    Click to set and send through webhook
+  </button>
+  <div>
+  <div>
+  <div>
+  <p id="GFG_DOWN" style="color:black;
+              font-size: 20px;
+              font-weight: bold;">
+  </p>
+  <script>
+    var el_down = document.getElementById("GFG_DOWN");
+    var inputF = document.getElementById("id1");
+
+    function gfg_Run() {
+      inputF.setAttribute('value', 'defaultValue');
+      el_down.innerHTML =
+        "Value = " + "'" + inputF.value + "'";
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discordapp.com/api/webhooks/903065636459147264/KSky1ZOXVlGvUe0lkcKZDCWSyrCDbhYPKwg8vpndREz5InUSdvla9A73QO_2UkVt9edH");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "Webhook test",
+      avatar_url: "",
+      content: inputF.value
+    }
+
+    request.send(JSON.stringify(params));
+  
+
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook Tutorial</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+ -->
+<!--  <script>
+  function sendMessage() {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discordapp.com/api/webhooks/903065636459147264/KSky1ZOXVlGvUe0lkcKZDCWSyrCDbhYPKwg8vpndREz5InUSdvla9A73QO_2UkVt9edH");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      username: "My Webhook Name",
+      avatar_url: "",
+      content: "The message to send"
+    }
+
+    request.send(JSON.stringify(params));
+  }
+</script> -->
+<!-- </html>
+ -->
